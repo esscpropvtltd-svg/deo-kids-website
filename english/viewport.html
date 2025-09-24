@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Viewport Checker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+    }
+    .box {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 { margin: 0 0 10px; }
+    p { margin: 6px 0; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Viewport Info</h1>
+    <p id="size"></p>
+  </div>
+
+  <script>
+    function updateViewport() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      document.getElementById("size").textContent = `Width × Height: ${width} × ${height}`;
+    }
+    updateViewport();
+    window.addEventListener("resize", updateViewport);
+  </script>
+</body>
+</html>
