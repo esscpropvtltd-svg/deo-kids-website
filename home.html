@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DEO KIDS SCHOOL HOME</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="अब modern education सिर्फ बड़े schools तक सीमित नहीं। Deo Kids School - जहाँ हर parent affordable fees में अपने बच्चे का सपना पूरा कर सकता है।">
+		<meta property="og:title" content="DEO KIDS SCHOOL - Modern & Affordable">
+		<meta property="og:description" content="अब modern education सिर्फ बड़े schools तक सीमित नहीं। Deo Kids School - जहाँ हर parent affordable fees में अपने बच्चे का सपना पूरा कर सकता है।">
+		<meta property="og:image" content="https://esscpropvtltd-svg.github.io/deo-kids-website/image/thumbnail.jpg">
+		<meta property="og:url" content="https://bit.ly/mydeokids">
+		<meta property="og:type" content="website">
+		<meta name="author" content="Bittu Sir">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="stylesheet" href="../css/desktop_view.css">
+		<link rel="stylesheet" href="../css/mobile_view.css">
+		<link rel="icon" type="image/x-icon" href="../image/fevicon.png">
+		
+		<!--nav bar-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+		
+		<!--fonts-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+					
+		
+	</head>
+	<body>
+		<!--nav bar-->
+		<div class="topnav" id="myTopnav" style="font-family: Handlee; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			<a href="" class="current" style="color:white">Deo Home</a>
+			<a href="">About</a>
+			<a href="">Contact</a>
+			<a href="">Admission</a>
+			<a href="">Blog</a>
+			<a href="viewport.html">Viewport</a>
+			<a href="" style="text-align: center; color: white;"><i class="bi bi-people-fill"></i>&nbsp;&nbsp;LogIn</a>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+		<script>
+			function myFunction() {
+			  var x = document.getElementById("myTopnav");
+			  if (x.className === "topnav") {
+				x.className += " responsive";
+			  } else {
+				x.className = "topnav";
+			  }
+			}
+		</script>
+		<div class="grass"></div>
+		
+		<!--go to top btn-->
+		<button onclick="topFunction()" id="myBtn" title="Go to top"><img src="image/top.png"></button>
+		<script>
+			// Get the button
+			let mybutton = document.getElementById("myBtn");
+
+			// When the user scrolls down 30px from the top of the document, show the button
+			window.onscroll = function() {scrollFunction()};
+
+			function scrollFunction() {
+			  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+				mybutton.style.display = "block";
+			  } else {
+				mybutton.style.display = "none";
+			  }
+			}
+
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
+		</script>
+		
+		<!--counselling form-->
+		<div class="flex" style="width: 90%; margin: 2% 5% 0px 5%;">	
+			<div class="flex-with-2-box">
+				<p class="default-font form-heading">Fill the form and we will discuss soon.</p>
+				<p class="sub-heading" style="color: #00A3D6;"><span style="color: red">E</span>nter <span style="color: green">Y</span>our D<span style="color: #595959">e</span>tails<span style="color: #595959">!</span></p>
+				
+				<div class="counselling-form">
+					<form action="https://formsubmit.co/esscpropvtltd@gmail.com" method="POST">
+						<input type="text" name="Name" placeholder="Enter Your Name" required><br>
+						<input type="text" id="pincode" name="Mobile No" maxlength="11" pattern="[0-9]{5}-[0-9]{5}" placeholder="Enter Your Ph. No." required><br>
+
+							<script>
+							  const pincodeInput = document.getElementById('pincode');
+
+							  pincodeInput.addEventListener('input', (e) => {
+								let pincode = e.target.value.replace(/\D/g, '');
+								if (pincode.length > 5) {
+								  pincode = pincode.substring(0, 5) + '-' + pincode.substring(5);
+								}
+								e.target.value = pincode;
+							  });
+							</script>
+						<select name="Class"><br>
+							<option value="Pre Nursery">Pre Nursery</option>
+							<option value="Nursery">Nursery</option>
+							<option value="LKG">LKG</option>
+							<option value="UKG">UKG</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="Not defined" selected>Select Class</option>
+						</select><br>
+						<input type="hidden" name="_next" value="https://esscpropvtltd-svg.github.io/deo-kids-website/english/thanks.html" target="blank">
+						<input type="hidden" name="_subject" value="Counselling Form">
+						<input type="hidden" name="_captcha" value="false">
+						<button class="button" type="submit">Submit</button>
+					</form>
+				</div>
+			</div>
+			<div class="flex-with-2-box">
+				<img src="https://static.vecteezy.com/system/resources/previews/044/449/292/non_2x/happy-father-s-day-3d-illustration-of-father-and-son-character-on-transparent-background-father-and-son-having-fun-3d-cartoon-character-free-png.png" class="form-image">
+			</div>
+		</div>
+		
+		<!--about-->
+		<div class="flex about">
+			<div class="flex-with-2-box">
+				
+			</div>
+			<div class="flex-with-2-box">
+				<p class="main-heading content" style="color: #00A3D6; text-align: center; margin-bottom: 20px;"><span style="color: red">W</span>elcome <span style="color: green">t</span>o <span style="color: #FFC000">O</span>ur S<span style="color: #595959">c</span>hool<span style="color: #595959">!</span></p>
+				<p class="content_2">Do you know that we have the strongest school curriculum that is exclusively based on the guidelines of the ‘National Education Policy (NEP)’ 2020? There are many factors that make us one of the most unique schools. These factors are: Smart Classes, Virtual Reality (VR), Teaching Learning Material, Science & Technology, Project Work and extra activities with bhajans and patriotic songs which focus on promoting the overall development of your child. We provide your child with a home like environment where their mind is nurtured in the best possible manner.
+				Our preschool curriculum is designed by a team of experienced teachers to ensure that children are introduced to essential skills and concepts in a fun and enjoyable way.</p>
+			</div>
+		</div>
+		
+		<!--Groups-->
+		<p class="main-heading div_top_margin" style="color: #00A3D6; text-align: center;"><span style="color: red">O</span>ur <span style="color: green">T</span>eaching M<span style="color: #595959">e</span>thodology<span style="color: #595959">!</span></p>
+		<p class="group_content">
+			We have developed this method through our 12 years of hard work, in-depth study of child psychology and our experiences. On this basis, we have divided the teaching methods into three groups:
+		</p>
+		<div class="flex group">
+			<div class="flex-with-3-box">
+				<div class="group_1">
+					<p style="padding: 20px 20px 0px 20px;">The aim of <b>Group-1</b> is to help children learn language, behaviour and the art of living among friends so that they can be successful in their lives.</p>
+					<div class="sub-heading group_container">Pre Nur - Nur</div>
+				</div>
+			</div>
+			<div class="flex-with-3-box">
+				<div class="group_2">
+					<p style="padding: 20px 20px 0px 20px;">The aim of <b>Group-2</b> is to develop children's academic, social and thinking abilities and to ensure that your child is fully prepared to move to the primary group.</p>
+					<div class="sub-heading group_container">LKG - UKG</div>
+				</div>
+			</div>
+			<div class="flex-with-3-box">
+				<div class="group_3">
+					<p style="padding: 20px 20px 0px 20px;">The aim of <b>Group-3</b> is to develop a desire for lifelong learning and promote intellectual, emotional, and social growth in a supportive environment.</p>
+					<div class="sub-heading group_container">Class: 1 - 5</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--why choose-->
+		<div class="why_bg">
+			<p class="main-heading content" style="color: #00A3D6; text-align: center;"><span style="color: red">W</span>hy <span style="color: green">P</span>eople <span style="color: #FFC000">L</span>ike <span style="color: #595959">U</span>s<span style="color: #595959">!</span></p>
+			<div class="why_contain"></div>
+		</div>
+	</body>
+</html>
