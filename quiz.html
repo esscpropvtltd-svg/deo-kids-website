@@ -1,228 +1,348 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deo Kids Quiz</title>
+  <meta name="author" content="Bittu Sir">
+  <title>Quiz Games - Deo Kids School</title>
+  <link rel="icon" type="image/x-icon" href="image/fevicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/desktop_view.css">
+  <link rel="stylesheet" href="css/mobile_view.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background: #f9f9f9;
-	  font-size: 18px;
+      padding: 10px;
     }
+
     h2 {
       text-align: center;
-      margin-bottom: 30px;
-      color: #333;
     }
-    .table-container {
-      width: 100%;
-      /* overflow-x: auto;   horizontal scroll on small screens */
+	.main-text{
+		margin: 3% auto 4% auto; 
+		color: #00A3D6; 
+		text-align: center;
+	}
+	
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 2%;
     }
+
+    select {
+      padding: 6px;
+      font-size: 18px;
+      width: 240px; /* Formative, Class, Subject width reduced */
+	  font-family: "Raleway", sans-serif;
+    }
+
+    #errorMsg {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+      text-align: center;
+      display: none;
+	  margin-bottom: 2%;
+    }
+
     table {
+      width: 90%;
       border-collapse: collapse;
-      width: 100%;
-      /* min-width: 500px;   ensure table does not shrink too much */
-      background: #fff;
+      margin: 0px 5% 10px 5%;
+      table-layout: fixed; /* fixed layout for column width */
+	  background: #fff;
 	  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
+
     th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
+      border: 1px solid #000;
+      padding: 8px;
       text-align: left;
       word-wrap: break-word;
     }
-    th {
+	
+	th {
       background: #4CAF50;
       color: white;
-	  border: 1px solid #4CAF50;
-	  width: 0px;
     }
-    tr:nth-child(even) {
+
+    .underline{
+		padding: 0px 20px 10px 20px;
+		border-bottom: 2px solid purple;
+		display: inline;
+	}
+	
+	tr:nth-child(even) {
       background: #f2f2f2;
     }
-	.underline{
-		padding: 0px 10px 10px 10px;
-		border-bottom: 2px solid purple;
-	}
+	
+	
 	a{
-		text-decoration: none;
 		color: blue;
-		margin-right: 10px;
-		line-height: 1.6;
+		text-decoration: none;
 	}
 	a:hover{
-		text-decoration: underline;
+		font-weight: bold;
 	}
-	
-	footer{
-		background-color: #333; 
-		color: yellow; 
-		position: fixed; 
-		bottom: 0; 
-		left: 0; 
-		text-align: center; 
-		width: 100%; 
-		padding: 20px 0px;
-	}
-	
-	
-	
-    /* Responsive tweak for very small screens */
-    @media (max-width: 600px) {
-	  body{
-		font-size: 16px;
-	  }
-      th, td {
-        padding: 6px;
-      }
-	  h2 {
-		  margin-bottom: 25px;
-		}
+
+    @media screen and (max-width: 600px) {
 		.underline{
-			padding: 0px 5px 5px 5px;
-			border-bottom: 2px solid purple;
+			padding: 0px 10px 10px 10px;
 		}
-		a{
-			margin-right: 5px;
+		.filter-container {
+			margin-bottom: 10%;
+		}
+		#errorMsg {
+		  margin-bottom: 4%;
 		}
 		
-		footer{
-			padding: 10px 20px;
+		table{
+			width: 100%;
+			margin:0;
+		}
+		th, td {
+			font-size: 15px;
+			padding: 5px;
+		}
+		select {
 			width: 90%;
-			line-height: 1.6;
+			margin: auto 5%;
+			font-size: 15px;
+		}
+	  
+		.main-text{
+			margin: 3% auto 10% auto; 
+			color: #00A3D6; 
+			text-align: center;
+			font-size: 20px;
+		}
+		.filter-container {
+			margin-bottom: 5%;
 		}
     }
+	
+	@media screen and (max-width: 320px) {
+		th, td {
+        font-size: 12px;
+      }
+	  select {
+		font-size: 12px;
+      }
+	}
   </style>
 </head>
 <body>
-  <h2><span class="underline">DEO: LKG</span></h2>
-  <div class="table-container">
-    <table>
-      <tr>
-        <th>Subject</th>
-        <th>Chapters</th>
-      </tr>
-      <tr>
-        <td>English</td>
-        <td>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSfHKp3d-YwenNlGG9xMl6_do0crZgkiIksfl_A2jston_MXTw/viewform " target="blank">Ch_1,</a>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSdFsoA3SatA2WNRZwZOXxjkUAzmH5l9dys2tmC-91kfIeyeSQ/viewform" target="blank">Ch_2,</a>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSdcDrgq-ziO5LQiDyilR0UcjoOQf007F1je7THz0j7UExRX_w/viewform" target="blank">Ch_3,</a>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSeDE4k_pD_dmHXeF6X1EgPxPg0IoJrOlcQrh19Q0rLIRKGxvg/viewform" target="blank">Ch_4.1,</a>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSdI_eADKwN7Kl7Os_YLDBbXO8YRMBp4GjbYpmMhUz_bAaF9Sw/viewform" target="blank">Ch_4.2,</a>
-			
-		</td>
-      </tr>
-      <tr>
-        <td>#Picture Book</td>
-        <td>Coming Soon</td>
-      </tr>
-      <tr>
-        <td>#Maths</td>
-        <td>Coming Soon</td>
-      </tr>
-    </table>
+  <h2 class="main-heading main-text"><div class=" underline"><span style="color: red">S</span>tudents' <span style="color: green">S</span>tudy T<span style="color: #595959">a</span>ble<span style="color: #595959">!</span></div></h2>
+
+  <div class="filter-container">
+    <select id="formativeSelect">
+      <option value="">Formative चुनें</option>
+      <option value="FA-1">FA-1</option>
+      <option value="FA-2">FA-2</option>
+      <option value="FA-3">FA-3</option>
+    </select>
+
+    <select id="classSelect">
+      <option value="">Class चुनें</option>
+      <option value="Pre Nur">Pre Nur</option>
+      <option value="Nursery">Nursery</option>
+      <option value="LKG">LKG</option>
+      <option value="UKG">UKG</option>
+      <option value="Class-1">Class-1</option>
+      <option value="Class-2">Class-2</option>
+      <option value="Class-3">Class-3</option>
+      <option value="Class-4">Class-4</option>
+      <option value="Class-5">Class-5</option>
+    </select>
+
+    <select id="subjectSelect">
+      <option value="">Subject चुनें</option>
+      <option value="Math">Math</option>
+      <option value="English">English</option>
+      <option value="Science">Science</option>
+      <option value="Social Studies">Social Studies</option>
+      <option value="GK">GK</option>
+      <option value="Picture Book">Picture Book</option>
+    </select>
   </div>
-  
-  
-  <h2><span class="underline">DEO: UKG</span></h2>
-  <div class="table-container">
-    <table>
+
+  <div id="errorMsg">कोई रिकॉर्ड नहीं मिला ❌</div>
+
+  <table id="chaptersTable">
+    <thead>
       <tr>
+        <th>Formative</th>
+        <th>Class</th>
         <th>Subject</th>
-        <th>Chapters</th>
+        <th>Chapter</th>
       </tr>
-      <tr>
-        <td>English</td>
-        <td>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSfqeyLgGiUyTdynQMkH2FOZTW5kmEb-UXnqlOM4pelfOS1WPQ/viewform" target="blank">Ch_1,</a>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSdAapm35rMdLpJvaeCXFF16C_7TuWbQjehoHgvaz60To8dAZw/viewform" target="blank">Ch_2.1,</a>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLScG8qjBENc3RYGIj6sVp1B9n_gft0EU3poccCKfc2-7bRw2fQ/viewform" target="blank">Ch_2.2,</a>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSeumOMD8he6LQt0s5jNQ1lDDlWiXBJpOcI4t4tabXQ14A1fUQ/viewform" target="blank">Ch_3,</a>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSclwaSUVQwLFewJSiWD2-XrSBormA9x7RpVRFSDuUD4fUQ-Ig/viewform" target="blank">Ch_4,</a>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLScr2vL-YPdv-LmyjdNexd5ev1QFTR4sNXIi0ibDeRQPMYn3TA/viewform" target="blank">Ch_10,</a>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLScws4WZlc5g6MgIrvp8SoB4I3Qgo-BdiS9vB4lWXFXMf16Wmg/viewform" target="blank">Ch_11,</a>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSfpN6cqoeIwooQJslpIXtLHUmUNjeejrgn5sdNXkk6dejY0lQ/viewform" target="blank">Ch_12,</a>
-		</td>
-      </tr>
-      <tr>
-        <td>#Maths</td>
-        <td>Coming Soon</td>
-      </tr>
-      <tr>
-        <td>#</td>
-        <td>Coming Soon</td>
-      </tr>
-    </table>
-  </div>
-  
-  
-  <h2><span class="underline">DEO: 1</span></h2>
-  <div class="table-container">
-    <table>
-      <tr>
-        <th>Subject</th>
-        <th>Chapters</th>
-      </tr>
-      <tr>
-        <td>English</td>
-        <td>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSewthr7dqsJcJmzB8m5zZfuPl6uwf_oJHUjOTHvCRjASi-9eA/viewform" target="blank">Ch_5,</a>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSdCofEHCdKFmdjLchwntVR3MIDHQP2ltRBgvlqvJkgX72vWUQ/viewform" target="blank">Ch_6,</a>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSdnjpynTNpv-zHTOjaBlrgrvN7sd1l5d2xYxUYSUjBL_rPMsg/viewform" target="blank">Ch_7,</a>
-		</td>
-      </tr>
-      <tr>
-        <td>Science</td>
-        <td>Coming Soon</td>
-      </tr>
-      <tr>
-        <td>Social Studies</td>
-        <td>Coming Soon</td>
-      </tr>
-	  <tr>
-        <td>GK</td>
-        <td>Coming Soon</td>
-      </tr>
-    </table>
-  </div>
-  
-  
-  <h2><span class="underline">DEO: 3</span></h2>
-  <div class="table-container">
-    <table>
-      <tr>
-        <th>Subject</th>
-        <th>Chapters</th>
-      </tr>
-      <tr>
-        <td>English</td>
-        <td>
-			Coming Soon
-		</td>
-      </tr>
-      <tr>
-        <td>Science</td>
-        <td>Coming Soon</td>
-      </tr>
-      <tr>
-        <td>Social Studies</td>
-        <td>Coming Soon</td>
-      </tr>
-	  <tr>
-        <td>GK</td>
-        <td>
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLSejR3VEvhTUXJcytTmBhAAC4p3feeqhf7uJjAJNPfOxEQ5QAA/viewform" target="blank">Ch_2,</a>
-		</td>
-      </tr>
-    </table>
-  </div>
-  
-  <div style="height: 100px;"></div>
-  <footer>
-		Note: This is a temporary page. Last Update: 26-Sep-2025
-  </footer>
+    </thead>
+    <tbody>
+		
+		<!--LKG-->
+		
+		<tr data-formative="FA-1" data-class="LKG" data-subject="English">
+			<td>FA-1</td>
+			<td>LKG</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLSfHKp3d-YwenNlGG9xMl6_do0crZgkiIksfl_A2jston_MXTw/viewform" target="blank">Ch-1</a></td>
+		</tr>
+		<tr data-formative="FA-1" data-class="LKG" data-subject="English">
+			<td>FA-1</td>
+			<td>LKG</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLSdFsoA3SatA2WNRZwZOXxjkUAzmH5l9dys2tmC-91kfIeyeSQ/viewform" target="blank">Ch-2</a></td>
+		</tr>
+		<tr data-formative="FA-1" data-class="LKG" data-subject="English">
+			<td>FA-1</td>
+			<td>LKG</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLSdcDrgq-ziO5LQiDyilR0UcjoOQf007F1je7THz0j7UExRX_w/viewform" target="blank">Ch-3</a></td>
+		</tr>
+		<tr data-formative="FA-1" data-class="LKG" data-subject="English">
+			<td>FA-1</td>
+			<td>LKG</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLSeDE4k_pD_dmHXeF6X1EgPxPg0IoJrOlcQrh19Q0rLIRKGxvg/viewform" target="blank">Ch-4 (A)</a></td>
+		</tr>
+		<tr data-formative="FA-1" data-class="LKG" data-subject="English">
+			<td>FA-1</td>
+			<td>LKG</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLSdI_eADKwN7Kl7Os_YLDBbXO8YRMBp4GjbYpmMhUz_bAaF9Sw/viewform" target="blank">Ch-4 (B)</a></td>
+		</tr>
+		
+		<!--UKG-->
+		
+		<tr data-formative="FA-1" data-class="UKG" data-subject="English">
+			<td>FA-1</td>
+			<td>UKG</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLSfqeyLgGiUyTdynQMkH2FOZTW5kmEb-UXnqlOM4pelfOS1WPQ/viewform" target="blank">Ch-1</a></td>
+		</tr>
+		<tr data-formative="FA-1" data-class="UKG" data-subject="English">
+			<td>FA-1</td>
+			<td>UKG</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLSdAapm35rMdLpJvaeCXFF16C_7TuWbQjehoHgvaz60To8dAZw/viewform" target="blank">Ch-2 (A)</a></td>
+		</tr>
+		<tr data-formative="FA-1" data-class="UKG" data-subject="English">
+			<td>FA-1</td>
+			<td>UKG</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLScG8qjBENc3RYGIj6sVp1B9n_gft0EU3poccCKfc2-7bRw2fQ/viewform" target="blank">Ch-2 (B)</a></td>
+		</tr>
+		<tr data-formative="FA-1" data-class="UKG" data-subject="English">
+			<td>FA-1</td>
+			<td>UKG</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLSeumOMD8he6LQt0s5jNQ1lDDlWiXBJpOcI4t4tabXQ14A1fUQ/viewform" target="blank">Ch-3</a></td>
+		</tr>
+		<tr data-formative="FA-1" data-class="UKG" data-subject="English">
+			<td>FA-1</td>
+			<td>UKG</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLSclwaSUVQwLFewJSiWD2-XrSBormA9x7RpVRFSDuUD4fUQ-Ig/viewform" target="blank">Ch-4</a></td>
+		</tr>
+		
+		
+		
+		<tr data-formative="FA-2" data-class="UKG" data-subject="English">
+			<td>FA-2</td>
+			<td>UKG</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLScr2vL-YPdv-LmyjdNexd5ev1QFTR4sNXIi0ibDeRQPMYn3TA/viewform" target="blank">Ch-10</a></td>
+		</tr>
+		<tr data-formative="FA-2" data-class="UKG" data-subject="English">
+			<td>FA-2</td>
+			<td>UKG</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLScws4WZlc5g6MgIrvp8SoB4I3Qgo-BdiS9vB4lWXFXMf16Wmg/viewform" target="blank">Ch-11</a></td>
+		</tr>
+		<tr data-formative="FA-2" data-class="UKG" data-subject="English">
+			<td>FA-2</td>
+			<td>UKG</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLSfpN6cqoeIwooQJslpIXtLHUmUNjeejrgn5sdNXkk6dejY0lQ/viewform" target="blank">Ch-12</a></td>
+		</tr>
+		
+		<!--Class:1-->
+		
+		<tr data-formative="FA-2" data-class="Class-1" data-subject="English">
+			<td>FA-2</td>
+			<td>Class-1</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLSewthr7dqsJcJmzB8m5zZfuPl6uwf_oJHUjOTHvCRjASi-9eA/viewform" target="blank">Ch-5</a></td>
+		</tr>
+		<tr data-formative="FA-2" data-class="Class-1" data-subject="English">
+			<td>FA-2</td>
+			<td>Class-1</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLSdCofEHCdKFmdjLchwntVR3MIDHQP2ltRBgvlqvJkgX72vWUQ/viewform" target="blank">Ch-6</a></td>
+		</tr>
+		<tr data-formative="FA-2" data-class="Class-1" data-subject="English">
+			<td>FA-2</td>
+			<td>Class-1</td>
+			<td>English</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLSdnjpynTNpv-zHTOjaBlrgrvN7sd1l5d2xYxUYSUjBL_rPMsg/viewform" target="blank">Ch-7</a></td>
+		</tr>
+		
+		<!--Class:3-->
+		
+		<tr data-formative="FA-1" data-class="Class-3" data-subject="GK">
+			<td>FA-1</td>
+			<td>Class-3</td>
+			<td>GK</td>
+			<td><a href="https://docs.google.com/forms/d/e/1FAIpQLSejR3VEvhTUXJcytTmBhAAC4p3feeqhf7uJjAJNPfOxEQ5QAA/viewform" target="blank">Ch-2</a></td>
+		</tr>
+    </tbody>
+  </table>
+
+  <script>
+    const formativeSelect = document.getElementById('formativeSelect');
+    const classSelect = document.getElementById('classSelect');
+    const subjectSelect = document.getElementById('subjectSelect');
+    const chaptersTable = document.getElementById('chaptersTable');
+    const errorMsg = document.getElementById('errorMsg');
+
+    function filterTable() {
+      const formative = formativeSelect.value;
+      const className = classSelect.value;
+      const subject = subjectSelect.value;
+      let anyVisible = false;
+
+      const rows = chaptersTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+      for (let row of rows) {
+        const rowFormative = row.getAttribute('data-formative');
+        const rowClass = row.getAttribute('data-class');
+        const rowSubject = row.getAttribute('data-subject');
+
+        if ((formative === "" || formative === rowFormative) &&
+            (className === "" || className === rowClass) &&
+            (subject === "" || subject === rowSubject)) {
+          row.style.display = '';
+          anyVisible = true;
+        } else {
+          row.style.display = 'none';
+        }
+      }
+
+      errorMsg.style.display = anyVisible ? 'none' : 'block';
+    }
+
+    formativeSelect.addEventListener('change', filterTable);
+    classSelect.addEventListener('change', filterTable);
+    subjectSelect.addEventListener('change', filterTable);
+
+    // Page load: show all rows
+    window.onload = function() {
+      filterTable(); // initially all visible
+    }
+  </script>
 </body>
 </html>
