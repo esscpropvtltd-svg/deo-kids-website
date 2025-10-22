@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>DEO KIDS SCHOOL HOME</title>
+		<title>DEO KIDS SCHOOL - Modern & Affordable</title>
 		<meta charset="UTF-8">
 		<meta name="description" content="अब modern education सिर्फ बड़े schools तक सीमित नहीं। Deo Kids School - जहाँ हर parent affordable fees में अपने बच्चे का सपना पूरा कर सकता है।">
 		<meta property="og:title" content="DEO KIDS SCHOOL - Modern & Affordable">
@@ -15,6 +15,8 @@
 		<link rel="stylesheet" href="../css/desktop_view.css">
 		<link rel="stylesheet" href="../css/mobile_view.css">
 		<link rel="icon" type="image/x-icon" href="../image/fevicon.png">
+		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 		
 		<!--nav bar-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -167,5 +169,57 @@
 			<p class="main-heading content" style="color: #00A3D6; text-align: center;"><span style="color: red">W</span>hy <span style="color: green">P</span>eople <span style="color: #FFC000">L</span>ike <span style="color: #595959">U</span>s<span style="color: #595959">!</span></p>
 			<div class="why_contain"></div>
 		</div>
+		
+		<!--Testimonials-->
+			<p class="main-heading div_top_margin_2" style="color: #00A3D6; text-align: center;"><span style="color: red">O</span>ur <span style="color: green">P</span>arents' V<span style="color: #595959">o</span>ice<span style="color: #595959">!</span></p>
+			
+			<div class="swiper mySwiper">
+				<div class="swiper-wrapper">
+				    <div class="swiper-slide"><img src="image/Testimonials/kunal.jpg" alt="Parent 1" /></div>
+				    <div class="swiper-slide"><img src="image/Testimonials/kunal.jpg" alt="Parent 2" /></div>
+				    <div class="swiper-slide"><img src="image/Testimonials/kunal.jpg" alt="Parent 3" /></div>
+				    <div class="swiper-slide"><img src="image/Testimonials/kunal.jpg" alt="Parent 4" /></div>
+				    <div class="swiper-slide"><img src="image/Testimonials/kunal.jpg" alt="Parent 5" /></div>
+				</div>
+
+				<!-- Buttons -->
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
+
+			<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+			<script>
+				var swiper = new Swiper(".mySwiper", {
+					loop: true,
+					centeredSlides: true,
+					grabCursor: true,
+					autoplay: {
+					delay: 2000,
+					disableOnInteraction: false,
+				},
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+				slidesPerView: 1,  // default small
+				spaceBetween: 20,   // default small
+
+				// Breakpoints
+				breakpoints: {
+					600: {        // tablet
+					    slidesPerView: 2,
+					    spaceBetween: 35,
+					},
+					1024: {       // desktop
+					    slidesPerView: 3,
+					    spaceBetween: 45,
+					},
+				},
+			});
+			
+			const swiperEl = document.querySelector('.mySwiper');
+			swiperEl.addEventListener('mouseenter', () => swiper.autoplay.stop());
+			swiperEl.addEventListener('mouseleave', () => swiper.autoplay.start());
+			</script>
 	</body>
 </html>
